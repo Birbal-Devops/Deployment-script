@@ -22,7 +22,6 @@ Replace <frontend-branch> and <backend-branch> with the correct branch names, an
 
 - **Set the root working directory in `deploy.sh`:**
 
-  ```bash
   ROOT_DIR="/home/birbal/"
 Place docker-compose.yml in the root directory (/home/birbal/).
 
