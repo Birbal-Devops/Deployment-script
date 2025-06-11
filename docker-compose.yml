@@ -19,6 +19,11 @@ services:
       - JWT_SECRET=${JWT_SECRET}
       - SMTP_USERNAME=${SMTP_USERNAME}
       - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - LINODE_REGION=${LINODE_REGION}
+      - LINODE_ENDPOINT=${LINODE_ENDPOINT}
+      - LINODE_SECRET_KEY=${LINODE_SECRET_KEY}
+      - LINODE_BUCKET_NAME=${LINODE_BUCKET_NAME}
+      - LINODE_ACCESS_KEY=${LINODE_ACCESS_KEY}
     depends_on:
       - db
     command: ["/wait-for-it.sh", "db:5432", "--", "java", "-jar", "app.jar"]
