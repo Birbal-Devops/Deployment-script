@@ -27,8 +27,8 @@ services:
     depends_on:
       - db
     command: ["/wait-for-it.sh", "db:5432", "--", "java", "-jar", "app.jar"]
-#    volumes:
-#      - ./webtrak/wait-for-it.sh:/wait-for-it.sh
+    # volumes:
+    #   - ./webtrak/wait-for-it.sh:/wait-for-it.sh
 
   frontend:
     build:
@@ -53,6 +53,8 @@ services:
     image: postgres:15
     container_name: webtrak-db
     restart: always
+    ports:
+      - "5432:5432" 
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
